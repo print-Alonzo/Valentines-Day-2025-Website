@@ -85,3 +85,43 @@ h2 {
     flex-grow: 1;
     text-align: center;
 }
+
+#letter {
+    width: 100%;
+    padding: 20px 0px;
+    background-color: #694F8E;
+    display: flex;
+    flex-direction: column;
+}
+
+#letter-container {
+    height: 700px;
+    width: 800px;
+    background-color: white;
+    align-self: center;
+    margin: 20px 0px;
+    border-radius: 30px;
+}
+
+#memories {
+    background-color: #E3A5C7;
+    width: 100%;
+    padding: 20px 80px;
+    display: flex;
+    flex-direction: column;
+}
+
+#memories-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 35px;
+    margin: 20px 0px;
+}
+
+.memory-container {
+    min-width: 250px;
+    min-height: 250px;
+    background-color: white;
+}
