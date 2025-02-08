@@ -102,16 +102,12 @@ h2 {
     background-color: #694F8E;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
-#letter-container {
-    height: 700px;
-    width: 800px;
-    background-color: white;
-    align-self: center;
+#letter button {
     margin: 20px 0px;
-    border-radius: 30px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #B692C2;
 }
 
 #memories {
@@ -188,6 +184,6 @@ h2 {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.button:hover {
+.button:hover, #letter button:hover {
     background-color: #563D7C;
 }
