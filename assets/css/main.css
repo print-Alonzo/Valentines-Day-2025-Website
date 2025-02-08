@@ -1,21 +1,3 @@
-#header {
-    background-color: #F8E7F6;
-    width: 100%;
-    height: 120px;
-    text-align: center;
-    align-content: center;
-}
-
-#header h1 {
-    font-family: 'Satisfy';
-    font-size: 40px;
-    color: #694F8E;
-}
-
-hr {
-    border: 3px #694F8E solid;
-}
-
 #about-me {
     display: flex;
     width: 100%;
