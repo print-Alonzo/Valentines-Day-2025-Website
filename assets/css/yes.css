@@ -1,0 +1,24 @@
+body {
+    background-color: #F8E7F6;
+    height: auto;
+}
+
+.button {
+    width: 320px;
+    background-color: #694F8E;
+    color: white;
+    font-family: 'Satisfy', cursive;
+    font-size: 20px;
+    border: none;
+    padding: 5px 40px;
+    margin-bottom: 48px;
+    border-radius: 50px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.button:hover {
+    background-color: #563D7C;
+}

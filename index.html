@@ -4,109 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>I love you!</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Satisfy&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/index.css">
 </head>
-<body>
-    <!-- Header -->
-    <div id="header">
-        <h1>Welcome to a little corner of the internet that belongs to us</h1>
-    </div>
+<body style="background-color: #F8E7F6">   
 
-    <hr>
-
-    <!-- About Me -->
-    <div id="about-me">
-        <h2>About Me</h2>
-        <div id="about-me-container">
-            <div id="about-me-image">
-                
-            </div>
-            <div id="about-me-info">
-                <div class="info-container">
-                    <div class="info-title">The one who adores you endlessly</div>
-                    <div class="info-text">Alonzo</div>
-                </div>
-                <div class="info-container">
-                    <div class="info-title">The day the universe decided to prepare me for you</div>
-                    <div class="info-text">Jan. 11, 2004</div>
-                </div>
-                <div class="info-container">
-                    <div class="info-title">Hobbies</div>
-                    <div class="info-text">Loving you, thinking about you, and making you smile</div>
-                </div>
-                <div class="info-container">
-                    <div class="info-title">Likes</div>
-                    <div class="info-text">Your voice, your laugh, your warmth, and every little thing about you</div>
-                </div>
-                <div class="info-container">
-                    <div class="info-title">Dislikes</div>
-                    <div class="info-text">Days without you</div>
-                </div>
-            </div>
+    <form>
+        <img class="mb-4 mx-auto d-block" src="./assets/images/login-logo.png" alt="" width="100" height="100">
+        <h1 class="h3 mb-3 fw-normal text-center" style="font-family: 'Satisfy', cursive">Sign in for a V-day Surprise</h1>
+    
+        <div class="form-floating mb-1">
+          <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+          <label for="floatingInput" style="font-family: 'Poppins'">Email address</label>
         </div>
-    </div>
-
-
-    <!-- Letter -->
-    <div id="letter">
-        <h2>Letter to the Love of my Life</h2>
-        <div id="letter-container">
-
+        <div class="form-floating mb-3">
+          <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+          <label for="floatingPassword" style="font-family: 'Poppins'">Password</label>
         </div>
-    </div>
 
-    <!-- Memories -->
-    <div id="memories">
-        <h2>My Most Treasured Memories with you</h2>
-        <div id="memories-container">
-            <div class="memory-container">
-                
-            </div>
-            <div class="memory-container">
-                
-            </div>
-            <div class="memory-container">
-                
-            </div>
-            <div class="memory-container">
-                
-            </div>
-            <div class="memory-container">
-                
-            </div>
-            <div class="memory-container">
-                
-            </div>
-            <div class="memory-container">
-                
-            </div>
-            <div class="memory-container">
-                
-            </div>
-        </div>
-    </div>
-
-
-    <!-- Question -->
-    <div id="question">
-        <h2>Would you be my Valentine?</h2>
-        <div id="question-container">
-            <div class="button">
-                <a href="./public/yes.html">
-                    <button type="button">Yes</button>
-                </a>
-            </div>
-            <div class="button">
-                <a href="./public/no.html">
-                    <button type="button">No</button>
-                </a>
-            </div>
-        </div>
-    </div>
+        <button class="btn btn-primary w-100 py-2" type="submit" style="font-family: 'Satisfy', cursive; background-color: #694F8E; border: none;">Sign in</button>
+    </form>
+    <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 </body>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Select the form
+        const form = document.querySelector("form");
+  
+        form.addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent form from submitting normally
+  
+            // Get the input values
+            const email = document.getElementById("floatingInput").value;
+            const password = document.getElementById("floatingPassword").value;
+  
+            // Predefined credentials (change these as needed)
+            const validEmail = "love@example.com";
+            const validPassword = "valentine123";
+  
+            // Check if the credentials match
+            if (email === validEmail && password === validPassword) {
+                window.location.href = "./public/main.html"; // Redirect to success page
+            } else {
+                alert("Incorrect email or password. Please try again.");
+            }
+        });
+    });
+  </script>
+  
 </html>
