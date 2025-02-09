@@ -27,6 +27,8 @@
                 anything in the entire world. She is the most beautiful, kindest, and the best gf ever. I am the
                 luckiest guy to have someone like her in my life.</p>
         </div>
+        <button type="button" class="button" id="header-button">Click Me!</button>
+        <p>Click to play or pause</p>
     </div>
 
     <!-- About Me -->
@@ -66,7 +68,7 @@
     <div id="letter" class="py-5">
         <h2>Letter to the Love of my Life</h2>
         <div>
-            <button type="button" class="button">Play</button>
+            <button type="button" class="button" id="love-message">Play or Pause</button>
         </div>
     </div>
 
@@ -75,35 +77,59 @@
         <h2>My Most Treasured Memories with you</h2>
         <div id="memories-container">
             <div class="memory-container" id="memory1">
-
+                <img src="../assets/images/memory1.JPG" title="memory" />
             </div>
             <div class="memory-container" id="memory2">
-
+                <img src="../assets/images/memory2.jpg" title="memory" />
             </div>
             <div class="memory-container" id="memory3">
-
+                <img src="../assets/images/memory3.jpg" title="memory" />
             </div>
             <div class="memory-container" id="memory4">
-
+                <img src="../assets/images/memory4.jpg" title="memory" />
             </div>
             <div class="memory-container" id="memory5">
-
+                <img src="../assets/images/memory5.jpg" title="memory" />
             </div>
             <div class="memory-container" id="memory6">
-
+                <img src="../assets/images/memory6.jpg" title="memory" />
             </div>
             <div class="memory-container" id="memory7">
-
+                <img src="../assets/images/memory7.jpg" title="memory" />
             </div>
             <div class="memory-container" id="memory8">
-
+                <img src="../assets/images/memory8.jpg" title="memory" />
             </div>
         </div>
     </div>
 
 
+    <!-- Songs that remind me of you -->
+     <div id="songs" class="py-5">
+        <h2>Songs that remind me of you</h2>
+        <div id="songs-container">
+            <div class="song-container" id="song1">
+                <p>1</p>
+            </div>
+            <div class="song-container" id="song2">
+                <p>2</p>
+            </div>
+            <div class="song-container" id="song3">
+                <p>3</p>
+            </div>
+            <div class="song-container" id="song4">
+                <p>4</p>
+            </div>
+            <div class="song-container" id="song5">
+                <p>5</p>
+            </div>
+        </div>
+        <p>Click to play or pause</p>
+     </div>
+
+
     <!-- Question -->
-    <div class="question">
+    <div id="question">
         <h2>Would you be my Valentine?</h2>
         <div id="question-container">
             <div>
@@ -124,51 +150,66 @@
     </audio>
 
     <audio id="letter-audio" hidden>
-        <source src="../assets/audio/">
+        <source src="../assets/audio/Vday 2025 message.m4a">
     </audio>
 
-    <audio id="memory1-audio" hidden>
-        <source src="../assets/audio/">
+    <audio id="song1-audio" hidden>
+        <source src="../assets/audio/song1.mp3">
     </audio>
 
-    <audio id="memory2-audio" hidden>
-        <source src="../assets/audio/">
+    <audio id="song2-audio" hidden>
+        <source src="../assets/audio/song2.mp3">
     </audio>
 
-    <audio id="memory3-audio" hidden>
-        <source src="../assets/audio/">
+    <audio id="song3-audio" hidden>
+        <source src="../assets/audio/song3.mp3">
     </audio>
 
-    <audio id="memory4-audio" hidden>
-        <source src="../assets/audio/">
+    <audio id="song4-audio" hidden>
+        <source src="../assets/audio/song4.mp3">
     </audio>
 
-    <audio id="memory5-audio" hidden>
-        <source src="../assets/audio/">
-    </audio>
-
-    <audio id="memory6-audio" hidden>
-        <source src="../assets/audio/">
-    </audio>
-
-    <audio id="memory7-audio" hidden>
-        <source src="../assets/audio/">
-    </audio>
-
-    <audio id="memory8-audio" hidden>
-        <source src="../assets/audio/">
+    <audio id="song5-audio" hidden>
+        <source src="../assets/audio/song5.mp3">
     </audio>
 
 </body>
 <script>
-    function playAudio(id) {
-        var audio = document.getElementById(id).play();
-        audio.play();
+    var pressTimer;
+
+    function toggleAudio(id) {
+        var audio = document.getElementById(id);
+        if (audio.paused) {
+            audio.play();
+        } else {
+            audio.pause();
+        }
     }
 
-    document.getElementById("header").addEventListener("click", function () {
-        playAudio("bgMusic");
+   document.getElementById("header-button").addEventListener("click", function () {
+        toggleAudio("bgMusic");
+        document.getElementById("bgMusic").volume = 0.7;
     });
+
+    document.getElementById("love-message").addEventListener("click", function () {
+        document.getElementById("bgMusic").volume = 0.05;
+        toggleAudio("letter-audio");
+
+        document.getElementById("letter-audio").addEventListener("ended", function () {
+            document.getElementById("bgMusic").volume = 0.7;
+        });
+
+        document.getElementById("letter-audio").addEventListener("pause", function () {
+            document.getElementById("bgMusic").volume = 0.7;
+        });
+    });
+
+    for (let i = 1; i <= 5; i++) {
+        document.getElementById("song"+i).addEventListener("click", function () {
+            document.getElementById("bgMusic").volume = 0;
+            toggleAudio("song"+i+"-audio")
+        });
+    }
 </script>
 
 </html>
